@@ -7,4 +7,4 @@ const router = express.Router();
 
 router.post('/login', validate(loginSchema), login);
 
-export default router;
+export const userRoutes = router;

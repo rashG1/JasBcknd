@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import User from '../src/models/user.model.js';
 
-dotenv.config();
+import User from '../models/user.model.js'; // Adjust the path as necessary
+import {config} from '../config/env.js'; // Adjust the path as necessary
+
 
 const admins = [
   { username: 'admin1', password: 'Admin@123', role: 'admin' },
@@ -12,7 +12,7 @@ const admins = [
 
 async function createAdmins() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(config.mongoURI);
     console.log('Connected to MongoDB');
 
     for (const adminData of admins) {
