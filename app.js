@@ -8,7 +8,7 @@ import projectRoutes from './routes/project.routes.js';
 import companyDetailRoutes from './routes/comapnyDetail.routes.js';
 
 import { errorHandler } from './middlewares/error.middleware.js';
-import { swaggerUi, specs } from './config/swagger.js';
+// import { swaggerUi, specs } from './config/swagger.js';
 import teamRoutes from './routes/team.routes.js';
 const app = express();
 
@@ -23,7 +23,7 @@ app.use('/api/project', projectRoutes);
 app.use('/api/company', companyDetailRoutes);
 app.use('/api/team', teamRoutes);
 // Swagger docs
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Error handler
 app.use(errorHandler);
